@@ -15,6 +15,10 @@
 require "json"
 require "rest-client"
 
+puts "Cleaning up database..."
+Movie.destroy_all
+puts "Database cleaned"
+
 response = RestClient.get "https://tmdb.lewagon.com/movie/top_rated"
 repos = JSON.parse(response)
 # => repos is an `Array` of `Hashes`.
