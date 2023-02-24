@@ -8,13 +8,12 @@
 </div>
 
 <div class="container my-3">
-  <div class="row">
+  <div class="row" data-movies-target="results"
+    data-controller="sortable">
     <% @lists.each do |list| %>
-    <% url = list.photo.key ?
-      cl_image_path(list.photo.key, height: 300, crop: :fill) :
-      "https://source.unsplash.com/random/?#{list.name}"
+    <% url = "https://source.unsplash.com/random/?#{list.name}"
     %>
-        <div class="col-4">
+        <div class="col-4" >
           <div id="<%= dom_id list %>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= url%>)">
               <%= link_to list.name, list_path(list) %>
           </div>

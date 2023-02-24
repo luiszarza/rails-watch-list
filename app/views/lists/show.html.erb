@@ -1,5 +1,5 @@
 
-<% url = @list.photo.key ? cl_image_path(@list.photo.key, height: 300, crop: :fill) : "https://source.unsplash.com/random/?#{@list.name}" %>
+<% url = "https://source.unsplash.com/random/?#{@list.name}" %>
 
 <div class="banner" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= url %>');">
   <div class="container text-center">
